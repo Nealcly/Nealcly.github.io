@@ -12,8 +12,245 @@
   <link rel="stylesheet" href="w3.css">
 
   <style>
-  .w3-sidebar a {font-family: "Roboto", sans-serif}
-  body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+    :root {
+      --accent: #3c6ff0;
+      --accent-dark: #2741a5;
+      --accent-soft: rgba(60, 111, 240, 0.12);
+      --bg: #f4f6fb;
+      --card-bg: #ffffff;
+      --text-primary: #1f2a44;
+      --text-muted: #516175;
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .w3-wide {
+      font-family: "Montserrat", sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.2s ease-in-out;
+    }
+
+    a:hover {
+      color: var(--accent-dark);
+    }
+
+    .w3-sidebar {
+      background: linear-gradient(190deg, #1e3c87 0%, #2741a5 60%, #1d2671 100%);
+      box-shadow: 0 8px 24px rgba(30, 60, 135, 0.35);
+    }
+
+    .w3-sidebar .w3-bar-item {
+      font-family: "Roboto", sans-serif;
+      color: rgba(255, 255, 255, 0.86);
+      border-radius: 8px;
+      margin: 4px 12px;
+    }
+
+    .w3-sidebar .w3-bar-item:hover {
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+    }
+
+    .w3-main {
+      background: transparent;
+      padding-top: 24px;
+      padding-bottom: 48px;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      box-shadow: 0 16px 44px rgba(60, 111, 240, 0.12);
+      border: 1px solid rgba(60, 111, 240, 0.08);
+      margin: 0 24px 32px;
+      padding: 36px 42px;
+    }
+
+    .section-card h2 {
+      font-size: 28px;
+      margin-bottom: 18px;
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .section-card h2::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 6px;
+      height: 24px;
+      border-radius: 3px;
+      background: var(--accent);
+    }
+
+    .section-card p {
+      color: var(--text-muted);
+    }
+
+    #home.section-card {
+      text-align: center;
+      padding: 48px 42px;
+    }
+
+    #home img {
+      width: 80%;
+      max-width: 320px;
+      border-radius: 20px;
+      box-shadow: 0 24px 50px rgba(31, 58, 147, 0.25);
+      margin-bottom: 24px;
+    }
+
+    #home h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    #home .intro-text {
+      max-width: 640px;
+      margin: 0 auto 18px;
+      text-align: left;
+    }
+
+    #home .tagline {
+      font-size: 18px;
+      color: var(--accent-dark);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    #home .contact-line {
+      margin-top: 12px;
+    }
+
+    .inline-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+      font-weight: 600;
+    }
+
+    .inline-links a {
+      position: relative;
+    }
+
+    .inline-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      opacity: 0;
+      transform: translateY(4px);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .inline-links a:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .news-list,
+    .styled-list,
+    .service-list,
+    .award-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .news-list li {
+      background: var(--accent-soft);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .section-card ol {
+      padding-left: 20px;
+    }
+
+    .section-card li {
+      margin-bottom: 12px;
+    }
+
+    .styled-list li,
+    .service-list li,
+    .award-list li {
+      padding-left: 22px;
+      position: relative;
+      color: var(--text-muted);
+    }
+
+    .styled-list li::before,
+    .service-list li::before,
+    .award-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(60, 111, 240, 0.15);
+    }
+
+    header.w3-top {
+      background: linear-gradient(190deg, #1e3c87 0%, #2741a5 100%);
+      box-shadow: 0 6px 18px rgba(30, 60, 135, 0.2);
+    }
+
+    header.w3-top .w3-bar-item {
+      color: #ffffff;
+    }
+
+    #footer {
+      text-align: center;
+      color: var(--text-muted);
+      margin: 40px 0 20px;
+    }
+
+    @media (max-width: 768px) {
+      .w3-main {
+        margin-left: 0;
+        padding-top: 96px;
+      }
+
+      .section-card {
+        margin: 0 12px 24px;
+        padding: 28px 22px;
+      }
+
+      #home.section-card {
+        padding: 40px 22px;
+      }
+
+      #home h1 {
+        font-size: 30px;
+      }
+    }
   </style>
 
   <link rel="icon" type="image/png" href="images/leyangcui.jpg">
@@ -41,8 +278,7 @@
 <!-- Top menu on small screens -->
 <header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
   <div class="w3-bar-item w3-padding-24">Leyang</div>
-  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right"  style="font-stretch: extra-expanded;" onclick="w3_open()"><b>≡</b></a>
-  </div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" style="font-stretch: extra-expanded;" onclick="w3_open()"><b>≡</b></a>
 </header>
 
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -55,51 +291,50 @@
   <div class="w3-hide-large" style="margin-top:83px"></div>
 
 <!-- The Home Section -->
-    <div class="w3-container w3-center w3-padding-32" id="home">
-      <img style="width: 80%;max-width: 320px" alt="profile photo" src="images/leyangcui.jpeg">
+    <div class="w3-container w3-center w3-padding-32 section-card" id="home">
+      <img alt="profile photo" src="images/leyangcui.jpeg">
       <h1>Leyang Cui （崔乐阳）</h1>
-        <p class="w3-justify" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;max-width:600px">
-          I am a senior researcher at Tencent AI lab.
-          I obtained my Ph.D. degree at Zhejiang University and Westlake University, advised by <a href="https://frcchang.github.io/">Prof. Yue Zhang</a>. My research interests are focused on large language models, specifically on reward models, preference alignment algorithms, and methods for alleviating hallucinations.
-                  </p>
-        <p style="color:steelblue;">
-                Looking for internship or collaboration? drop me an email.
-              </p>
-        <p>
-            <a href="mailto:nealcly.nlp@gmail.com">Email</a>: nealcly.nlp AT gmail.com
-              </p>
-        <p class="w3-center">
-          <a href="https://scholar.google.com/citations?user=6YVwZgkAAAAJ&hl=en">Google Scholar</a> &nbsp/&nbsp
-          <a href="https://dblp.org/pid/247/6181.html"> DBLP </a>
-        </p>
-        </tbody></table>
-  </div>
+      <p class="tagline">Senior Researcher, Tencent AI Lab</p>
+      <p class="intro-text w3-justify">
+          I am a senior researcher at Tencent AI Lab. I obtained my Ph.D. degree at Zhejiang University and Westlake University, advised by <a href="https://frcchang.github.io/" target="_blank" rel="noopener">Prof. Yue Zhang</a>. My research interests focus on large language models, specifically on reward models, preference alignment algorithms, and methods for alleviating hallucinations.
+      </p>
+      <p class="contact-line">Looking for internship or collaboration? Drop me an email.</p>
+      <p class="contact-line">
+        <strong>Email</strong>: <a href="mailto:nealcly.nlp@gmail.com">nealcly.nlp AT gmail.com</a>
+      </p>
+      <div class="inline-links">
+        <a href="https://scholar.google.com/citations?user=6YVwZgkAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a href="https://dblp.org/pid/247/6181.html" target="_blank" rel="noopener">DBLP</a>
+      </div>
+    </div>
 
 
 
-    <!-- The Awards Section -->
-  <div class="w3-container w3-padding-32" id="news">
+    <!-- The News Section -->
+  <div class="w3-container w3-padding-32 section-card" id="news">
     <h2>News</h2>
-    <!-- -->
-    <!-- <p><li> Jul. 2022: An overview of my Ph.D. experience (<a href="https://mp.weixin.qq.com/s/AcKeLwrFVVW7UMFo9BThoQ">Chinese blogs</a>).</p> -->
-    <p><li> Aug. 2024: Invited to serve as Session Chair at ACL 2024.</p>
-      <p><li> Sep. 2023: Invited to serve as Action Editor/Area Chair at EACL, NAACL and ACL 2024.</p>
-    <p><li> Dec. 2022: Invited to serve as Area Chair (Syntax: Tagging, Chunking and Parsing) at ACL 2023.</p>
-    <p><li> Jun. 2022: Invited to serve as Area Chair (Dialogue and Interactive Systems) at EMNLP 2022.</p>
+    <ul class="news-list">
+      <li><strong>Aug. 2024</strong> &middot; Invited to serve as Session Chair at ACL 2024.</li>
+      <li><strong>Sep. 2023</strong> &middot; Invited to serve as Action Editor/Area Chair at EACL, NAACL, and ACL 2024.</li>
+      <li><strong>Dec. 2022</strong> &middot; Invited to serve as Area Chair (Syntax: Tagging, Chunking and Parsing) at ACL 2023.</li>
+      <li><strong>Jun. 2022</strong> &middot; Invited to serve as Area Chair (Dialogue and Interactive Systems) at EMNLP 2022.</li>
+    </ul>
   </div>
 
   
   <!-- The Talks Section -->
   <!-- w3-container w3-light-grey w3-padding-32 -->
-  <div class="w3-container w3-padding-32" id="experience">
+  <div class="w3-container w3-padding-32 section-card" id="experience">
   <h2>Experience</h2>
-    <li type="circle">Jun. 2021 - Dec. 2021, Research Intern, Pattern Recognition Center, Wechat, Tencent. Advised by <a href="http://fandongmeng.github.io/">Fandong Meng</a></li>
-    <li type="circle">Nov. 2020 - May. 2021, Research Intern, NLC Group, MSRA. Advised by <a href="https://sites.google.com/view/wuyu/home">Yu Wu</a> and <a href="https://www.microsoft.com/en-us/research/people/shujliu/">Shujie Liu</a></li>
-    <li type="circle">Jun. 2019 - Sep. 2019, Research Intern, NLC Group, MSRA. Advised by <a href="https://sites.google.com/view/wuyu/home">Yu Wu</a> and <a href="https://www.microsoft.com/en-us/research/people/shujliu/">Shujie Liu</a></li>
-    <li type="circle">Sep. 2017 - Apr. 2018, Research Intern, NLP Department, I2R, ASTAR. Advised by <a href="https://tuanluu.github.io/">Anh Tuan Luu</a></li>
+    <ul class="styled-list">
+      <li><strong>Jun. 2021 - Dec. 2021</strong> Research Intern, Pattern Recognition Center, WeChat, Tencent. Advised by <a href="http://fandongmeng.github.io/">Fandong Meng</a></li>
+      <li><strong>Nov. 2020 - May. 2021</strong> Research Intern, NLC Group, MSRA. Advised by <a href="https://sites.google.com/view/wuyu/home">Yu Wu</a> and <a href="https://www.microsoft.com/en-us/research/people/shujliu/">Shujie Liu</a></li>
+      <li><strong>Jun. 2019 - Sep. 2019</strong> Research Intern, NLC Group, MSRA. Advised by <a href="https://sites.google.com/view/wuyu/home">Yu Wu</a> and <a href="https://www.microsoft.com/en-us/research/people/shujliu/">Shujie Liu</a></li>
+      <li><strong>Sep. 2017 - Apr. 2018</strong> Research Intern, NLP Department, I2R, ASTAR. Advised by <a href="https://tuanluu.github.io/">Anh Tuan Luu</a></li>
+    </ul>
   </div>
  <!-- The Publications Section -->
-  <div class="w3-container w3-padding-32" id="publications">
+  <div class="w3-container w3-padding-32 section-card" id="publications">
     <h2>Publications</h2>
     (*: Equal contribution, &dagger;: Corresponding author)
 
@@ -108,13 +343,6 @@
       <ol><p>
 
 
-        <p>
-          <li>
-              <strong>Do Reasoning Models Show Better Verbalized Calibration?</strong> <a href="https://arxiv.org/pdf/2504.06564" target="_blank" style="text-decoration: none; color: #4285f4;font-weight: bold;">[PDF]</a>
-          </li>
-          Qingcheng Zeng, Weihao Xuan, <strong>Leyang Cui</strong>, Rob Voigt
-           <br>
-        </p>
 
 
     <p>
@@ -135,6 +363,15 @@
       </ol>
     <h4> Conference Papers:</h4>
     <ol>
+
+      <p>
+        <li>
+            <strong>Do Reasoning Models Show Better Verbalized Calibration?</strong> <a href="https://arxiv.org/pdf/2504.06564" target="_blank" style="text-decoration: none; color: #4285f4;font-weight: bold;">[PDF]</a>
+        </li>
+        Qingcheng Zeng, Weihao Xuan, <strong>Leyang Cui</strong>, Rob Voigt
+         <br>
+      EMNLP 2025
+      </p>
 
 
       <p>
@@ -500,21 +737,25 @@
   </div>
 
 <!-- The Services Section -->
-<div class="w3-container w3-padding-32" id="service">
+<div class="w3-container w3-padding-32 section-card" id="service">
     <h2>Services</h2>
-    <p style="text-indent: 2em;"><li>Senior Program Committee Members: IJCAI 2021</li></p>
-    <p style="text-indent: 2em;"><li>Area Chair: EMNLP 2022, ACL 2023, EACL 2024, NAACL 2024, ACL 2024</li></p>
-    <p style="text-indent: 2em;"><li>Reviewer: TASLP, TACL</li></p>
-    <p style="text-indent: 2em;"><li>Program Committee Members: NAACL 2022, ACL 2022, AAAI 2021, ACL 2021, EMNLP 2021, AAAI 2020, EMNLP 2020, COLING 2020, IJCAI 2020.</li></p>
+    <ul class="service-list">
+      <li>Senior Program Committee Member: IJCAI 2021</li>
+      <li>Area Chair: EMNLP 2022, ACL 2023, EACL 2024, NAACL 2024, ACL 2024</li>
+      <li>Reviewer: TASLP, TACL</li>
+      <li>Program Committee Member: NAACL 2022, ACL 2022, AAAI 2021, ACL 2021, EMNLP 2021, AAAI 2020, EMNLP 2020, COLING 2020, IJCAI 2020</li>
+    </ul>
 </div>
 
   <!-- The Awards Section -->
-  <div class="w3-container w3-padding-32" id="award">
+  <div class="w3-container w3-padding-32 section-card" id="award">
     <h2>Awards</h2>
-    <p><li> Westlake Presidential Award, 2022</p>
-    <p><li> Stars of Tomorrow, MSRA, 2021</p>
-    <p><li> Outstanding Students, Zhejiang University, 2019, 2020 and 2021</p>
-    <p><li> National Scholarship, 2019</p>
+    <ul class="award-list">
+      <li>Westlake Presidential Award, 2022</li>
+      <li>Stars of Tomorrow, MSRA, 2021</li>
+      <li>Outstanding Students, Zhejiang University, 2019, 2020 and 2021</li>
+      <li>National Scholarship, 2019</li>
+    </ul>
   </div>
 
 <div id="footer">
@@ -564,7 +805,10 @@ function myAccFunc() {
 }
 
 // Click on the "Jeans" link on page load to open the accordion for demo purposes
-document.getElementById("myBtn").click();
+var defaultButton = document.getElementById("myBtn");
+if (defaultButton) {
+  defaultButton.click();
+}
 
 
 // Open and close sidebar
